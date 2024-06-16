@@ -2,9 +2,9 @@ import { once } from 'node:events';
 import * as process from 'node:process';
 
 import { expect } from 'chai';
-import * as dns from 'dns';
+import * as dns from 'node:dns';
 import * as sinon from 'sinon';
-import { inspect } from 'util';
+import { inspect } from 'node:util';
 
 import {
   AUTH_MECHS_AUTH_SRC_EXTERNAL,
@@ -288,7 +288,7 @@ describe('Connection String', function () {
   it('should parse compression options', function () {
     const options = parseOptions('mongodb://localhost/?compressors=zlib&zlibCompressionLevel=4');
     expect(options).to.have.property('compressors');
-    expect(options.compressors).to.include('zlib');
+    expect(options.compressors).to.include('node:zlib');
     expect(options.zlibCompressionLevel).to.equal(4);
   });
 

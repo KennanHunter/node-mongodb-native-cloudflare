@@ -1,4 +1,4 @@
-import { callbackify } from 'util';
+import { callbackify } from 'node:util';
 
 import { AutoEncrypter, type AutoEncryptionOptions } from './client-side-encryption/auto_encrypter';
 import { MONGO_CLIENT_EVENTS } from './constants';

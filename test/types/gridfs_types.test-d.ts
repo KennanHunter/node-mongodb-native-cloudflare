@@ -1,4 +1,4 @@
-import { Readable } from 'stream';
+import { Readable } from 'node:stream';
 import { expectType } from 'tsd';
 
 import type { GridFSBucket, GridFSBucketWriteStream } from '../../src';

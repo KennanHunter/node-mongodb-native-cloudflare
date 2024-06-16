@@ -1,5 +1,5 @@
 import { saslprep } from '@mongodb-js/saslprep';
-import * as crypto from 'crypto';
+import * as crypto from 'node:crypto';
 
 import { Binary, type Document } from '../../bson';
 import {

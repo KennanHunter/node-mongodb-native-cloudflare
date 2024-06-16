@@ -1,7 +1,7 @@
-import * as fs from 'fs/promises';
+import * as fs from 'node:fs/promises';
 import { type MongoCryptContext, type MongoCryptKMSRequest } from 'mongodb-client-encryption';
-import * as net from 'net';
-import * as tls from 'tls';
+import * as net from 'node:net';
+import * as tls from 'node:tls';
 
 import {
   type BSONSerializeOptions,

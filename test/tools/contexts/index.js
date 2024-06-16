@@ -1,7 +1,7 @@
 'use strict';
 
 var vm = require('vm');
-var fs = require('fs');
+var fs = require('node:fs');
 var path = require('path');
 
 var shared = require('./shared');

@@ -1,8 +1,8 @@
 import { expect } from 'chai';
-import * as dns from 'dns';
+import * as dns from 'node:dns';
 import { EventEmitter, once } from 'events';
 import * as sinon from 'sinon';
-import { clearTimeout } from 'timers';
+import { clearTimeout } from 'node:timers';
 
 import {
   MongoDriverError,

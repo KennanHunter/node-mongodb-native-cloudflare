@@ -1,6 +1,6 @@
 import { EJSON } from 'bson';
 import { expect } from 'chai';
-import { readdirSync, readFileSync } from 'fs';
+import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'path';
 
 import {

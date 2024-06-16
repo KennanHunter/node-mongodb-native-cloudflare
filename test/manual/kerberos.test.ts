@@ -1,5 +1,5 @@
 import * as chai from 'chai';
-import { promises as dns } from 'dns';
+import { promises as dns } from 'node:dns';
 import * as sinon from 'sinon';
 
 import { MongoClient } from '../mongodb';

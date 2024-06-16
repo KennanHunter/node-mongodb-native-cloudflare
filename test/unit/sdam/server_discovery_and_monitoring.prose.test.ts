@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { once } from 'events';
-import { createServer, type Server } from 'net';
+import { createServer, type Server } from 'node:net';
 
 import { MongoClient, SERVER_HEARTBEAT_FAILED, SERVER_HEARTBEAT_STARTED } from '../../mongodb';
 

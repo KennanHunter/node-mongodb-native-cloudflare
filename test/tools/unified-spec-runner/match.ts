@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { EJSON } from 'bson';
 import { expect } from 'chai';
-import { inspect } from 'util';
+import { inspect } from 'node:util';
 
 import {
   Binary,

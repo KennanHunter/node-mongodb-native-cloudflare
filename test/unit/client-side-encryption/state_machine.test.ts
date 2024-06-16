@@ -1,12 +1,12 @@
 import { expect } from 'chai';
 import { EventEmitter, once } from 'events';
-import * as fs from 'fs/promises';
+import * as fs from 'node:fs/promises';
 import { type MongoCryptKMSRequest } from 'mongodb-client-encryption';
-import * as net from 'net';
+import * as net from 'node:net';
 import * as sinon from 'sinon';
-import { setTimeout } from 'timers';
+import { setTimeout } from 'node:timers';
 import { setTimeout as setTimeoutAsync } from 'timers/promises';
-import * as tls from 'tls';
+import * as tls from 'node:tls';
 
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import { StateMachine } from '../../../src/client-side-encryption/state_machine';

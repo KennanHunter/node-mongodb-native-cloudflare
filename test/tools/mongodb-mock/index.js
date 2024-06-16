@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('node:fs');
 const { MockServer } = require('./src/server.js');
 const { LEGACY_HELLO_COMMAND } = require('../../mongodb');
 

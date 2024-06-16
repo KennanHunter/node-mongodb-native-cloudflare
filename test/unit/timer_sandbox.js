@@ -3,14 +3,14 @@ const sinon = require('sinon');
 
 /**
  * sinon.useFakeTimers() only affects global methods, this function
- * creates a sinon sandbox that ensures that require('timers')
+ * creates a sinon sandbox that ensures that require('node:timers')
  * also uses the mocked variants.
  *
  * @returns {sinon.SinonSandbox}
  */
 exports.createTimerSandbox = () => {
   const timerSandbox = sinon.createSandbox();
-  const timers = require('timers');
+  const timers = require('node:timers');
   for (const method in timers) {
     if (method in global) {
       timerSandbox.replace(timers, method, (...args) => {

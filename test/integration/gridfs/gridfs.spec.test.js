@@ -65,7 +65,7 @@ describe('GridFS spec', function () {
             const db = client.db(configuration.db);
             db.dropDatabase(function (err) {
               expect(err).to.not.exist;
-              const BUCKET_NAME = 'fs';
+              const BUCKET_NAME = 'node:fs';
 
               const _runTest = function () {
                 const bucket = new GridFSBucket(db, { bucketName: BUCKET_NAME });
@@ -228,7 +228,7 @@ describe('GridFS spec', function () {
 
       db.collection(command.update).bulkWrite(bulk, callback);
     } else {
-      const msg = 'Command not recognized: ' + require('util').inspect(command);
+      const msg = 'Command not recognized: ' + require('node:util').inspect(command);
       callback(new Error(msg));
     }
   }

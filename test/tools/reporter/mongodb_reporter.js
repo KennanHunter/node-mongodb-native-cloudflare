@@ -17,8 +17,8 @@ const {
   EVENT_TEST_END
 } = mocha.Runner.constants;
 
-const fs = require('fs');
-const os = require('os');
+const fs = require('node:fs');
+const os = require('node:os');
 
 const print = message => fs.writeSync(2, Buffer.from(`${message}\n`, 'utf8'));
 

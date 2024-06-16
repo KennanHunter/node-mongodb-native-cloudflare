@@ -31,27 +31,27 @@
       "error",
       {
         "name": "clearTimeout",
-        "message": "Use `import { clearTimeout } from 'timers';` instead"
+        "message": "Use `import { clearTimeout } from 'node:timers';` instead"
       },
       {
         "name": "clearImmediate",
-        "message": "Use `import { clearImmediate } from 'timers';` instead"
+        "message": "Use `import { clearImmediate } from 'node:timers';` instead"
       },
       {
         "name": "clearInterval",
-        "message": "Use `import { clearInterval } from 'timers';` instead"
+        "message": "Use `import { clearInterval } from 'node:timers';` instead"
       },
       {
         "name": "setTimeout",
-        "message": "Use `import { setTimeout } from 'timers';` instead"
+        "message": "Use `import { setTimeout } from 'node:timers';` instead"
       },
       {
         "name": "setImmediate",
-        "message": "Use `import { setImmediate } from 'timers';` instead"
+        "message": "Use `import { setImmediate } from 'node:timers';` instead"
       },
       {
         "name": "setInterval",
-        "message": "Use `import { setInterval } from 'timers';` instead"
+        "message": "Use `import { setInterval } from 'node:timers';` instead"
       }
     ],
     "prettier/prettier": "error",

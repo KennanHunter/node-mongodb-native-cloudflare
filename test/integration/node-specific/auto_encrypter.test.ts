@@ -1,6 +1,6 @@
 import { expect } from 'chai';
-import { spawnSync } from 'child_process';
-import * as fs from 'fs';
+import { spawnSync } from 'node:child_process';
+import * as fs from 'node:fs';
 import { dirname, resolve } from 'path';
 import * as sinon from 'sinon';
 

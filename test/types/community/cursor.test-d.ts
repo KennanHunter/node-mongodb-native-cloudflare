@@ -1,4 +1,4 @@
-import type { Readable } from 'stream';
+import type { Readable } from 'node:stream';
 import { expectNotType, expectType } from 'tsd';
 
 import { Db, type Document, type FindCursor, MongoClient } from '../../mongodb';

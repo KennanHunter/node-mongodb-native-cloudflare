@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { setTimeout } from 'timers';
+import { setTimeout } from 'node:timers';
 
 // Exception to the import from mongodb rule we're unit testing our public Errors API
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports

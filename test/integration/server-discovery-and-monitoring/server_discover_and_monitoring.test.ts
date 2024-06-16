@@ -38,7 +38,7 @@ describe('Monitoring rtt tests', function () {
     sinon.restore();
   });
 
-  for (const serverMonitoringMode of ['poll', 'stream']) {
+  for (const serverMonitoringMode of ['poll', 'node:stream']) {
     context(`when serverMonitoringMode is set to '${serverMonitoringMode}'`, function () {
       context('after collecting a number of heartbeats', function () {
         beforeEach(async function () {

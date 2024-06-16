@@ -1,12 +1,12 @@
-import * as crypto from 'crypto';
-import type { SrvRecord } from 'dns';
+import * as crypto from 'node:crypto';
+import type { SrvRecord } from 'node:dns';
 import { type EventEmitter } from 'events';
-import { promises as fs } from 'fs';
-import * as http from 'http';
-import { clearTimeout, setTimeout } from 'timers';
-import * as url from 'url';
-import { URL } from 'url';
-import { promisify } from 'util';
+import { promises as fs } from 'node:fs';
+import * as http from 'node:http';
+import { clearTimeout, setTimeout } from 'node:timers';
+import * as url from 'node:url';
+import { URL } from 'node:url';
+import { promisify } from 'node:util';
 
 import { type Document, ObjectId, resolveBSONOptions } from './bson';
 import type { Connection } from './cmap/connection';

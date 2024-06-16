@@ -1,6 +1,6 @@
-import { promises as fs } from 'fs';
-import type { TcpNetConnectOpts } from 'net';
-import type { ConnectionOptions as TLSConnectionOptions, TLSSocketOptions } from 'tls';
+import { promises as fs } from 'node:fs';
+import type { TcpNetConnectOpts } from 'node:net';
+import type { ConnectionOptions as TLSConnectionOptions, TLSSocketOptions } from 'node:tls';
 
 import { type BSONSerializeOptions, type Document, resolveBSONOptions } from './bson';
 import { ChangeStream, type ChangeStreamDocument, type ChangeStreamOptions } from './change_stream';

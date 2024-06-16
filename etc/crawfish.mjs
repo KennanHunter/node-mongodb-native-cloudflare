@@ -1,6 +1,6 @@
 #! /usr/bin/env node --experimental-modules
 
-import { createReadStream, existsSync, promises } from 'fs';
+import { createReadStream, existsSync, promises } from 'node:fs';
 const { readFile } = promises;
 import { createInterface } from 'readline';
 import xml2js from 'xml2js';

@@ -1,9 +1,9 @@
 'use strict';
 
-const { createReadStream, createWriteStream } = require('fs');
-const { rm, mkdir, readdir } = require('fs/promises');
+const { createReadStream, createWriteStream } = require('node:fs');
+const { rm, mkdir, readdir } = require('node:fs/promises');
 const { resolve } = require('path');
-const { Readable } = require('stream');
+const { Readable } = require('node:stream');
 const readline = require('readline');
 const {
   makeClient,

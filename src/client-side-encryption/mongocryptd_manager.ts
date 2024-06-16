@@ -1,4 +1,4 @@
-import type { ChildProcess } from 'child_process';
+import type { ChildProcess } from 'node:child_process';
 
 import { MongoNetworkTimeoutError } from '../error';
 import { type AutoEncryptionExtraOptions } from './auto_encrypter';
@@ -46,7 +46,7 @@ export class MongocryptdManager {
     const cmdName = this.spawnPath || 'mongocryptd';
 
     // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const { spawn } = require('child_process') as typeof import('child_process');
+    const { spawn } = require('node:child_process') as typeof import('node:child_process');
 
     // Spawned with stdio: ignore and detached: true
     // to ensure child can outlive parent.

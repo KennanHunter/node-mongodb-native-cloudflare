@@ -1,5 +1,5 @@
-import { type Readable, Transform, type TransformCallback } from 'stream';
-import { clearTimeout, setTimeout } from 'timers';
+import { type Readable, Transform, type TransformCallback } from 'node:stream';
+import { clearTimeout, setTimeout } from 'node:timers';
 
 import type { BSONSerializeOptions, Document, ObjectId } from '../bson';
 import type { AutoEncrypter } from '../client-side-encryption/auto_encrypter';

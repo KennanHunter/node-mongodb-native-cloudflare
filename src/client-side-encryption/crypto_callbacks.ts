@@ -1,4 +1,4 @@
-import * as crypto from 'crypto';
+import * as crypto from 'node:crypto';
 
 type AES256Callback = (key: Buffer, iv: Buffer, input: Buffer, output: Buffer) => number | Error;
 

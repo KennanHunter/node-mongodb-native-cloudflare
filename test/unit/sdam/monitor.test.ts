@@ -4,7 +4,7 @@ import * as net from 'node:net';
 import { expect } from 'chai';
 import { satisfies } from 'semver';
 import * as sinon from 'sinon';
-import { setTimeout } from 'timers';
+import { setTimeout } from 'node:timers';
 import { setTimeout as setTimeoutPromise } from 'timers/promises';
 
 import {
@@ -316,7 +316,7 @@ describe('monitoring', function () {
     describe('roundTripTime', function () {
       const table = [
         {
-          serverMonitoringMode: 'stream',
+          serverMonitoringMode: 'node:stream',
           topologyVersion: {
             processId: new ObjectId(),
             counter: new Long(0, 0)

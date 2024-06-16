@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('node:fs');
 const yaml = require('js-yaml');
 const semver = require('semver');
 

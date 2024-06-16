@@ -1,4 +1,4 @@
-import { promisify } from 'util';
+import { promisify } from 'node:util';
 
 import { type BSONSerializeOptions, type Document, resolveBSONOptions } from '../bson';
 import type { Collection } from '../collection';

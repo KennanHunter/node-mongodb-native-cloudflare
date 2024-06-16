@@ -3,8 +3,8 @@ import { expect } from 'chai';
 import { on, once } from 'events';
 import { gte, lt } from 'semver';
 import * as sinon from 'sinon';
-import { PassThrough } from 'stream';
-import { setTimeout } from 'timers';
+import { PassThrough } from 'node:stream';
+import { setTimeout } from 'node:timers';
 
 import {
   AbstractCursor,

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-this-alias */
 import { expect } from 'chai';
 import * as chalk from 'chalk';
-import * as net from 'net';
+import * as net from 'node:net';
 
 import { MongoClient, ServerSessionPool } from '../../../mongodb';
 

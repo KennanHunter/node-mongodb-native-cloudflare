@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { format as f } from 'util';
+import { format as f } from 'node:util';
 
 import {
   Code,

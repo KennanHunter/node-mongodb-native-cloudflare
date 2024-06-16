@@ -1,6 +1,6 @@
 import { EJSON, UUID } from 'bson';
 import { expect } from 'chai';
-import * as crypto from 'crypto';
+import * as crypto from 'node:crypto';
 
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import { ClientEncryption } from '../../../src/client-side-encryption/client_encryption';

@@ -1,4 +1,4 @@
-import { Readable } from 'stream';
+import { Readable } from 'node:stream';
 
 import type { Document, ObjectId } from '../bson';
 import type { Collection } from '../collection';

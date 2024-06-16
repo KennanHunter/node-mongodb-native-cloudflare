@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import ConnectionString from 'mongodb-connection-string-url';
 import * as qs from 'querystring';
-import * as url from 'url';
+import * as url from 'node:url';
 
 import {
   type AuthMechanism,

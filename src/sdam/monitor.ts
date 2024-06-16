@@ -1,4 +1,4 @@
-import { clearTimeout, setTimeout } from 'timers';
+import { clearTimeout, setTimeout } from 'node:timers';
 
 import { type Document, Long } from '../bson';
 import { connect, makeConnection, makeSocket, performInitialHandshake } from '../cmap/connect';
@@ -50,7 +50,7 @@ function isInCloseState(monitor: Monitor) {
 export const ServerMonitoringMode = Object.freeze({
   auto: 'auto',
   poll: 'poll',
-  stream: 'stream'
+  stream: 'node:stream'
 } as const);
 
 /** @public */

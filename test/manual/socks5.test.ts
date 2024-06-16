@@ -25,9 +25,9 @@ describe('Socks5 Connectivity', function () {
   const singleConnectionString = new ConnectionString(process.env.MONGODB_URI_SINGLEHOST);
 
   if (process.env.SSL === 'ssl') {
-    rsConnectionString.searchParams.set('tls', 'true');
+    rsConnectionString.searchParams.set('node:tls', 'true');
     rsConnectionString.searchParams.set('tlsCAFile', process.env.SSL_CA_FILE);
-    singleConnectionString.searchParams.set('tls', 'true');
+    singleConnectionString.searchParams.set('node:tls', 'true');
     singleConnectionString.searchParams.set('tlsCAFile', process.env.SSL_CA_FILE);
   }
   rsConnectionString.searchParams.set('serverSelectionTimeoutMS', '2000');

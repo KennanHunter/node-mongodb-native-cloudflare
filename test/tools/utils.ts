@@ -6,9 +6,9 @@ import * as path from 'node:path';
 import { EJSON } from 'bson';
 import * as BSON from 'bson';
 import { expect } from 'chai';
-import { Readable } from 'stream';
-import { setTimeout } from 'timers';
-import { inspect, promisify } from 'util';
+import { Readable } from 'node:stream';
+import { setTimeout } from 'node:timers';
+import { inspect, promisify } from 'node:util';
 
 import {
   type Document,

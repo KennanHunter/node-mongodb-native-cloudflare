@@ -1,4 +1,4 @@
-import * as fs from 'fs';
+import * as fs from 'node:fs';
 
 import { MongoAWSError } from '../../../error';
 import { type AccessToken, MachineWorkflow } from './machine_workflow';

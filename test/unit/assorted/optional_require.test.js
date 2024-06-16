@@ -1,7 +1,7 @@
 'use strict';
 
 const { expect } = require('chai');
-const { existsSync } = require('fs');
+const { existsSync } = require('node:fs');
 const { resolve } = require('path');
 
 const { compress } = require('../../mongodb');

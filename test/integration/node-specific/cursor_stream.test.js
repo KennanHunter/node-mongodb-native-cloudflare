@@ -1,7 +1,7 @@
 'use strict';
 const { expect } = require('chai');
 const { Binary } = require('../../mongodb');
-const { setTimeout, setImmediate } = require('timers');
+const { setTimeout, setImmediate } = require('node:timers');
 
 describe('Cursor Streams', function () {
   let client;

@@ -1,5 +1,5 @@
-import { promisify } from 'util';
-import * as zlib from 'zlib';
+import { promisify } from 'node:util';
+import * as zlib from 'node:zlib';
 
 import { LEGACY_HELLO_COMMAND } from '../../constants';
 import { getSnappy, getZstdLibrary, type SnappyLib, type ZStandard } from '../../deps';
@@ -76,7 +76,7 @@ export async function compress(
       }
       return await zstd.compress(dataToBeCompressed, ZSTD_COMPRESSION_LEVEL);
     }
-    case 'zlib': {
+    case 'node:zlib': {
       if (options.zlibCompressionLevel) {
         zlibOptions.level = options.zlibCompressionLevel;
       }

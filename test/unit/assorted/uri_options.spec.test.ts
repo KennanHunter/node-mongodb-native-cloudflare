@@ -1,4 +1,4 @@
-import { unlinkSync, writeFileSync } from 'fs';
+import { unlinkSync, writeFileSync } from 'node:fs';
 
 import { loadSpecTests } from '../../spec';
 import { executeUriValidationTest } from '../../tools/uri_spec_runner';

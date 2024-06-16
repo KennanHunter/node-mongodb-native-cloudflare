@@ -1,14 +1,14 @@
-const net = require('net');
-const tls = require('tls');
+const net = require('node:net');
+const tls = require('node:tls');
 const { snappy } = require('./snappy_importer');
-const zlib = require('zlib');
+const zlib = require('node:zlib');
 const MESSAGE_HEADER_SIZE = require('./utils').MESSAGE_HEADER_SIZE;
 const opcodes = require('./utils').opcodes;
 const compressorIDs = require('./utils').compressorIDs;
 const Request = require('./request');
 const { Query } = require('./protocol');
 const EventEmitter = require('events');
-const { setTimeout } = require('timers');
+const { setTimeout } = require('node:timers');
 const { HostAddress } = require('../../../mongodb');
 
 /*

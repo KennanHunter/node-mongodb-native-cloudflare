@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { EventEmitter } from 'events';
-import { clearTimeout, setTimeout } from 'timers';
+import { clearTimeout, setTimeout } from 'node:timers';
 
 import {
   addContainerMetadata,

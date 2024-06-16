@@ -1,6 +1,6 @@
 import { EJSON } from 'bson';
 import { expect } from 'chai';
-import { readFile } from 'fs/promises';
+import { readFile } from 'node:fs/promises';
 import { join } from 'path';
 
 import { Decimal128, type Document, Double, Long, type MongoClient } from '../../../src';

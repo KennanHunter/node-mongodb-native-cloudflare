@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { readFileSync } from 'fs';
+import { readFileSync } from 'node:fs';
 import * as sinon from 'sinon';
 
 /* eslint-disable @typescript-eslint/no-restricted-imports */

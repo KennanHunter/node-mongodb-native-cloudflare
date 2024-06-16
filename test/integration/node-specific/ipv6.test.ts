@@ -1,6 +1,6 @@
 import { expect } from 'chai';
-import * as net from 'net';
-import * as process from 'process';
+import * as net from 'node:net';
+import * as process from 'node:process';
 import * as sinon from 'sinon';
 
 import {

@@ -1,10 +1,10 @@
 import { expect } from 'chai';
 import { once } from 'events';
-import * as net from 'net';
-import { type AddressInfo } from 'net';
+import * as net from 'node:net';
+import { type AddressInfo } from 'node:net';
 import { satisfies } from 'semver';
 import * as sinon from 'sinon';
-import { clearTimeout } from 'timers';
+import { clearTimeout } from 'node:timers';
 
 import {
   isHello,

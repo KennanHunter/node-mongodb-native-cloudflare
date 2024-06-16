@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import * as fs from 'fs';
+import * as fs from 'node:fs';
 import { resolve } from 'path';
 import * as sinon from 'sinon';
 

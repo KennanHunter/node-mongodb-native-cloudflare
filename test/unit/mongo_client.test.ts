@@ -1,9 +1,9 @@
 import { expect } from 'chai';
-import * as fs from 'fs';
-import * as os from 'os';
+import * as fs from 'node:fs';
+import * as os from 'node:os';
 import * as sinon from 'sinon';
-import { Writable } from 'stream';
-import { inspect } from 'util';
+import { Writable } from 'node:stream';
+import { inspect } from 'node:util';
 
 import {
   MongoAPIError,
@@ -75,7 +75,7 @@ describe('MongoClient', function () {
     expect(options).to.have.property('tlsCAFile', filename);
     expect(options).to.have.property('tlsCRLFile', filename);
     expect(options).has.property('passphrase', 'tlsCertificateKeyFilePassword');
-    expect(options).has.property('tls', true);
+    expect(options).has.property('node:tls', true);
   });
 
   const ALL_OPTIONS = {
@@ -237,31 +237,31 @@ describe('MongoClient', function () {
   it('srvHost saved to options for later resolution', function () {
     const options = parseOptions('mongodb+srv://server.example.com/');
     expect(options).has.property('srvHost', 'server.example.com');
-    expect(options).has.property('tls', true);
+    expect(options).has.property('node:tls', true);
   });
 
   it('ssl= can be used to set tls=false', function () {
     const options = parseOptions('mongodb+srv://server.example.com/?ssl=false');
     expect(options).has.property('srvHost', 'server.example.com');
-    expect(options).has.property('tls', false);
+    expect(options).has.property('node:tls', false);
   });
 
   it('tls= can be used to set tls=false', function () {
     const options = parseOptions('mongodb+srv://server.example.com/?tls=false');
     expect(options).has.property('srvHost', 'server.example.com');
-    expect(options).has.property('tls', false);
+    expect(options).has.property('node:tls', false);
   });
 
   it('ssl= can be used to set tls=true', function () {
     const options = parseOptions('mongodb+srv://server.example.com/?ssl=true');
     expect(options).has.property('srvHost', 'server.example.com');
-    expect(options).has.property('tls', true);
+    expect(options).has.property('node:tls', true);
   });
 
   it('tls= can be used to set tls=true', function () {
     const options = parseOptions('mongodb+srv://server.example.com/?tls=true');
     expect(options).has.property('srvHost', 'server.example.com');
-    expect(options).has.property('tls', true);
+    expect(options).has.property('node:tls', true);
   });
 
   it('supports ReadPreference option in url', function () {
@@ -427,8 +427,8 @@ describe('MongoClient', function () {
   });
 
   it('correctly sets tls if tls and ssl parameters are all set to the same value', () => {
-    expect(parseOptions('mongodb://localhost?ssl=true&tls=true')).to.have.property('tls', true);
-    expect(parseOptions('mongodb://localhost?ssl=false&tls=false')).to.have.property('tls', false);
+    expect(parseOptions('mongodb://localhost?ssl=true&tls=true')).to.have.property('node:tls', true);
+    expect(parseOptions('mongodb://localhost?ssl=false&tls=false')).to.have.property('node:tls', false);
   });
 
   it('transforms tlsInsecure correctly', function () {
@@ -453,9 +453,9 @@ describe('MongoClient', function () {
   describe('compressors', function () {
     it('can be set when passed in as an array in the options object', function () {
       const clientViaOpt = new MongoClient('mongodb://localhost', {
-        compressors: ['zlib', 'snappy']
+        compressors: ['node:zlib', 'snappy']
       });
-      expect(clientViaOpt.options).to.have.property('compressors').deep.equal(['zlib', 'snappy']);
+      expect(clientViaOpt.options).to.have.property('compressors').deep.equal(['node:zlib', 'snappy']);
     });
 
     it('can be set when passed in as a comma-delimited string in the options object or URI', function () {
@@ -463,8 +463,8 @@ describe('MongoClient', function () {
         compressors: 'zlib,snappy'
       });
       const clientViaUri = new MongoClient('mongodb://localhost?compressors=zlib,snappy');
-      expect(clientViaOpt.options).to.have.property('compressors').deep.equal(['zlib', 'snappy']);
-      expect(clientViaUri.options).to.have.property('compressors').deep.equal(['zlib', 'snappy']);
+      expect(clientViaOpt.options).to.have.property('compressors').deep.equal(['node:zlib', 'snappy']);
+      expect(clientViaUri.options).to.have.property('compressors').deep.equal(['node:zlib', 'snappy']);
     });
 
     it('should validate that a string or an array of strings is provided as input', function () {

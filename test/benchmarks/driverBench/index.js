@@ -8,8 +8,8 @@ const Runner = MongoBench.Runner;
 let bsonType = 'js-bson';
 // TODO(NODE-4606): test against different driver configurations in CI
 
-const { inspect } = require('util');
-const { writeFile } = require('fs/promises');
+const { inspect } = require('node:util');
+const { writeFile } = require('node:fs/promises');
 const { makeParallelBenchmarks, makeSingleBench, makeMultiBench } = require('../mongoBench/suites');
 
 const hw = os.cpus();

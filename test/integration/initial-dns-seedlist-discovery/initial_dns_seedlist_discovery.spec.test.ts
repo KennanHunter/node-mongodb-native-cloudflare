@@ -1,8 +1,8 @@
 import { expect } from 'chai';
-import * as dns from 'dns';
-import * as fs from 'fs';
+import * as dns from 'node:dns';
+import * as fs from 'node:fs';
 import * as path from 'path';
-import { promisify } from 'util';
+import { promisify } from 'node:util';
 
 import { HostAddress, MongoClient } from '../../mongodb';
 
@@ -54,10 +54,10 @@ function makeTest(test, topology) {
     // Implicit SRV options must be set.
     expect(options.directConnection).to.be.false;
     const testOptions = test.options;
-    if (testOptions && 'tls' in testOptions) {
-      expect(options).to.have.property('tls', testOptions.tls);
+    if (testOptions && 'node:tls' in testOptions) {
+      expect(options).to.have.property('node:tls', testOptions.tls);
     } else if (testOptions && 'ssl' in testOptions) {
-      expect(options).to.have.property('tls', testOptions.ssl);
+      expect(options).to.have.property('node:tls', testOptions.ssl);
     } else {
       expect(options.tls).to.be.true;
     }

@@ -1,8 +1,8 @@
 'use strict';
 
-const fs = require('fs');
+const fs = require('node:fs');
 const path = require('path');
-const { Readable } = require('stream');
+const { Readable } = require('node:stream');
 const { pipeline } = require('stream/promises');
 const { MongoClient } = require('../../..');
 const { GridFSBucket } = require('../../..');

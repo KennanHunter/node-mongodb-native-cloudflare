@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import * as dns from 'dns';
+import * as dns from 'node:dns';
 import { once } from 'events';
 import { satisfies } from 'semver';
 import * as sinon from 'sinon';

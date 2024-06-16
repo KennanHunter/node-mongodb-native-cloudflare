@@ -1,10 +1,10 @@
 #! /usr/bin/env ts-node
 
 import { parse, stringify } from '@iarna/toml';
-import { exec as execCb } from 'child_process';
-import { readFile, writeFile } from 'fs/promises';
-import { chdir } from 'process';
-import { promisify } from 'util';
+import { exec as execCb } from 'node:child_process';
+import { readFile, writeFile } from 'node:fs/promises';
+import { chdir } from 'node:process';
+import { promisify } from 'node:util';
 
 import {
   confirm,

@@ -1,7 +1,7 @@
 'use strict';
 
 const { assert: test, setupDatabase } = require('../shared');
-const f = require('util').format;
+const f = require('node:util').format;
 
 describe('stats', function () {
   before(function () {

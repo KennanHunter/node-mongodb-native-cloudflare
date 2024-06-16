@@ -31,7 +31,7 @@ describe('compression', function () {
     });
 
     context('when the agreed compressor is zlib', () => {
-      const options = { agreedCompressor: 'zlib' as const, zlibCompressionLevel: 2 };
+      const options = { agreedCompressor: 'node:zlib' as const, zlibCompressionLevel: 2 };
       const input = Buffer.from('test', 'utf8');
 
       it('compresses input with zlib', async () => {

@@ -443,7 +443,7 @@ export type EntityTypeId =
   | 'bucket'
   | 'thread'
   | 'cursor'
-  | 'stream'
+  | 'node:stream'
   | 'clientEncryption'
   | 'errors'
   | 'failures'
@@ -460,7 +460,7 @@ ENTITY_CTORS.set('session', ClientSession);
 ENTITY_CTORS.set('bucket', GridFSBucket);
 ENTITY_CTORS.set('thread', UnifiedThread);
 ENTITY_CTORS.set('cursor', AbstractCursor);
-ENTITY_CTORS.set('stream', ChangeStream);
+ENTITY_CTORS.set('node:stream', ChangeStream);
 
 const NO_INSTANCE_CHECK = ['errors', 'failures', 'events', 'successes', 'iterations'];
 
@@ -478,7 +478,7 @@ export class EntitiesMap<E = Entity> extends Map<string, E> {
   mapOf(type: 'session'): EntitiesMap<ClientSession>;
   mapOf(type: 'bucket'): EntitiesMap<GridFSBucket>;
   mapOf(type: 'cursor'): EntitiesMap<AbstractCursor>;
-  mapOf(type: 'stream'): EntitiesMap<UnifiedChangeStream>;
+  mapOf(type: 'node:stream'): EntitiesMap<UnifiedChangeStream>;
   mapOf(type: 'clientEncryption'): EntitiesMap<ClientEncryption>;
   mapOf(type: EntityTypeId): EntitiesMap<Entity> {
     const ctor = ENTITY_CTORS.get(type);
@@ -490,7 +490,7 @@ export class EntitiesMap<E = Entity> extends Map<string, E> {
 
   getChangeStreamOrCursor(key: string): UnifiedChangeStream | AbstractCursor {
     try {
-      const cs = this.getEntity('stream', key);
+      const cs = this.getEntity('node:stream', key);
       return cs;
     } catch {
       const cursor = this.getEntity('cursor', key);
@@ -505,7 +505,7 @@ export class EntitiesMap<E = Entity> extends Map<string, E> {
   getEntity(type: 'bucket', key: string, assertExists?: boolean): GridFSBucket;
   getEntity(type: 'thread', key: string, assertExists?: boolean): UnifiedThread;
   getEntity(type: 'cursor', key: string, assertExists?: boolean): AbstractCursor;
-  getEntity(type: 'stream', key: string, assertExists?: boolean): UnifiedChangeStream;
+  getEntity(type: 'node:stream', key: string, assertExists?: boolean): UnifiedChangeStream;
   getEntity(type: 'iterations', key: string, assertExists?: boolean): number;
   getEntity(type: 'successes', key: string, assertExists?: boolean): number;
   getEntity(type: 'errors', key: string, assertExists?: boolean): Document[];
@@ -541,7 +541,7 @@ export class EntitiesMap<E = Entity> extends Map<string, E> {
     }
 
     trace('closeStreams');
-    for (const [, stream] of this.mapOf('stream')) {
+    for (const [, stream] of this.mapOf('node:stream')) {
       await stream.close();
     }
 
@@ -658,7 +658,7 @@ export class EntitiesMap<E = Entity> extends Map<string, E> {
         map.set(entity.bucket.id, new GridFSBucket(db, options));
       } else if ('thread' in entity) {
         map.set(entity.thread.id, new UnifiedThread(entity.thread.id));
-      } else if ('stream' in entity) {
+      } else if ('node:stream' in entity) {
         throw new Error(`Unsupported Entity ${JSON.stringify(entity)}`);
       } else if ('clientEncryption' in entity) {
         const clientEncryption = createClientEncryption(map, entity.clientEncryption);

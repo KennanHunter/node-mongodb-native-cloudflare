@@ -5,13 +5,13 @@ require('source-map-support').install({
 });
 
 const path = require('path');
-const fs = require('fs');
+const fs = require('node:fs');
 const { MongoClient } = require('../../../mongodb');
 const { AstrolabeTestConfiguration, TestConfiguration } = require('../config');
 const { getEnvironmentalOptions } = require('../../utils');
 const mock = require('../../mongodb-mock/index');
-const { inspect } = require('util');
-const { setDefaultResultOrder } = require('dns');
+const { inspect } = require('node:util');
+const { setDefaultResultOrder } = require('node:dns');
 const { coerce, gte } = require('semver');
 
 // Default our tests to have auth enabled

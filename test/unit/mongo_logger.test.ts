@@ -1,8 +1,8 @@
 import { EJSON, ObjectId } from 'bson';
 import { expect } from 'chai';
 import * as sinon from 'sinon';
-import { Readable, Writable } from 'stream';
-import { inspect } from 'util';
+import { Readable, Writable } from 'node:stream';
+import { inspect } from 'node:util';
 
 import {
   COMMAND_FAILED,

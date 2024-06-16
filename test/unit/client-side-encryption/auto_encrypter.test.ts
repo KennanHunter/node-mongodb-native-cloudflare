@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import * as fs from 'fs';
+import * as fs from 'node:fs';
 import * as sinon from 'sinon';
 
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports

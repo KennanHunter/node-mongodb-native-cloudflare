@@ -1,6 +1,6 @@
 'use strict';
 const { expect } = require('chai');
-const { setTimeout } = require('timers');
+const { setTimeout } = require('node:timers');
 const { resolveConnectionString } = require('./utils');
 const { ns } = require('../../mongodb');
 const { extractAuthFromConnectionString } = require('../utils');

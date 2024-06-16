@@ -1,6 +1,6 @@
 import { type Document, EJSON } from 'bson';
 import { expect } from 'chai';
-import { readdirSync, readFileSync, statSync } from 'fs';
+import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { basename, extname, join } from 'path';
 
 import {

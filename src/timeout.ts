@@ -1,4 +1,4 @@
-import { clearTimeout, setTimeout } from 'timers';
+import { clearTimeout, setTimeout } from 'node:timers';
 
 import { MongoInvalidArgumentError } from './error';
 import { noop } from './utils';

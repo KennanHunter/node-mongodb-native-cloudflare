@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-types */
-import type { PeerCertificate } from 'tls';
+import type { PeerCertificate } from 'node:tls';
 import { expectAssignable, expectError, expectNotType, expectType } from 'tsd';
 
 import {
@@ -55,9 +55,9 @@ expectAssignable<((host: string, cert: PeerCertificate) => Error | undefined) | 
 );
 
 // compression options have simpler specification:
-// old way: {compression: { compressors: ['zlib', 'snappy'] }}
+// old way: {compression: { compressors: ['node:zlib', 'snappy'] }}
 expectType<PropExists<MongoClientOptions, 'compression'>>(false);
-expectType<('none' | 'snappy' | 'zlib' | 'zstd')[] | string | undefined>(options.compressors);
+expectType<('none' | 'snappy' | 'node:zlib' | 'zstd')[] | string | undefined>(options.compressors);
 
 // Removed cursor API
 const cursor = new MongoClient('').db().aggregate();

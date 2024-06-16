@@ -1,5 +1,5 @@
-import * as os from 'os';
-import * as process from 'process';
+import * as os from 'node:os';
+import * as process from 'node:process';
 
 import { BSON, type Document, Int32 } from '../../bson';
 import { MongoInvalidArgumentError } from '../../error';
@@ -135,11 +135,11 @@ export function makeClientMetadata(options: MakeClientMetadataOptions): ClientMe
     .set('version', os.release())
     .set('type', os.type());
 
-  if (!metadataDocument.ifItFitsItSits('os', osInfo)) {
+  if (!metadataDocument.ifItFitsItSits('node:os', osInfo)) {
     for (const key of osInfo.keys()) {
       osInfo.delete(key);
       if (osInfo.size === 0) break;
-      if (metadataDocument.ifItFitsItSits('os', osInfo)) break;
+      if (metadataDocument.ifItFitsItSits('node:os', osInfo)) break;
     }
   }
 

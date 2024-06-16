@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { inspect } from 'util';
+import { inspect } from 'node:util';
 
 import {
   type Collection,

@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { type ChildProcess, spawn } from 'child_process';
+import { type ChildProcess, spawn } from 'node:child_process';
 import { once } from 'events';
 
 import {

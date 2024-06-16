@@ -1,4 +1,4 @@
-import { inspect, promisify } from 'util';
+import { inspect, promisify } from 'node:util';
 
 import { type Document, EJSON, type EJSONOptions, type ObjectId } from './bson';
 import type { CommandStartedEvent } from './cmap/command_monitoring_events';

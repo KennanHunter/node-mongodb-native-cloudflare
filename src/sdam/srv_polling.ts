@@ -1,5 +1,5 @@
-import * as dns from 'dns';
-import { clearTimeout, setTimeout } from 'timers';
+import * as dns from 'node:dns';
+import { clearTimeout, setTimeout } from 'node:timers';
 
 import { MongoRuntimeError } from '../error';
 import { TypedEventEmitter } from '../mongo_types';

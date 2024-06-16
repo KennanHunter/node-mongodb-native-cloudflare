@@ -1,7 +1,7 @@
 import * as process from 'node:process';
 
 import { expect } from 'chai';
-import { promises as fs } from 'fs';
+import { promises as fs } from 'node:fs';
 
 import {
   LEGACY_HELLO_COMMAND,

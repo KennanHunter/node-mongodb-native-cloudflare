@@ -1,8 +1,8 @@
 'use strict';
 
-const { readFileSync } = require('fs');
+const { readFileSync } = require('node:fs');
 const { resolve } = require('path');
-const process = require('process');
+const process = require('node:process');
 
 /**
  * Filter for whether or not a test needs / doesn't need Client Side Encryption

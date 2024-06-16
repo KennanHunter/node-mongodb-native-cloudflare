@@ -1,4 +1,4 @@
-import * as dns from 'dns';
+import * as dns from 'node:dns';
 
 import { getKerberos, type Kerberos, type KerberosClient } from '../../deps';
 import { MongoInvalidArgumentError, MongoMissingCredentialsError } from '../../error';

@@ -1,4 +1,4 @@
-import { clearTimeout, setTimeout } from 'timers';
+import { clearTimeout, setTimeout } from 'node:timers';
 
 import type { ObjectId } from '../bson';
 import {

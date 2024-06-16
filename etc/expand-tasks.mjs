@@ -3,11 +3,11 @@
 //
 // The output is pipeable: `node expand-task.js <task name> | jq '.'`
 
-import { readFileSync } from 'fs';
+import { readFileSync } from 'node:fs';
 import { load } from 'js-yaml';
 import { gte } from 'semver';
-import { Readable } from 'stream';
-import { inspect } from 'util';
+import { Readable } from 'node:stream';
+import { inspect } from 'node:util';
 
 if (!gte(process.version, '16.0.0')) {
   console.error('expand-tasks.mjs requires Node16+');

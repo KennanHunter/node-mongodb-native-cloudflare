@@ -1,8 +1,8 @@
 import { expect } from 'chai';
 import { once } from 'events';
 import * as sinon from 'sinon';
-import { Transform } from 'stream';
-import { inspect } from 'util';
+import { Transform } from 'node:stream';
+import { inspect } from 'node:util';
 
 import {
   type Collection,

@@ -7,7 +7,7 @@
 const { MongoClient } = require('../src');
 const { now, calculateDurationInMs, arrayStrictEqual, errorStrictEqual } = require('../src/utils');
 
-const util = require('util');
+const util = require('node:util');
 const chalk = require('chalk');
 const argv = require('yargs')
   .usage('Usage: $0 [options] <connection string>')

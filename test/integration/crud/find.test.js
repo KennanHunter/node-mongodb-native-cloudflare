@@ -2,7 +2,7 @@
 const { assert: test } = require('../shared');
 const { expect } = require('chai');
 const sinon = require('sinon');
-const { setTimeout } = require('timers');
+const { setTimeout } = require('node:timers');
 const { Code, ObjectId, Long, Binary, ReturnDocument } = require('../../mongodb');
 
 describe('Find', function () {

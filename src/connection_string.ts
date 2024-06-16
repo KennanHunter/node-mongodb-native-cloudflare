@@ -1,6 +1,6 @@
-import * as dns from 'dns';
+import * as dns from 'node:dns';
 import ConnectionString from 'mongodb-connection-string-url';
-import { URLSearchParams } from 'url';
+import { URLSearchParams } from 'node:url';
 
 import type { Document } from './bson';
 import { MongoCredentials } from './cmap/auth/mongo_credentials';
@@ -353,8 +353,8 @@ export function parseOptions(
     allProvidedOptions.set(key, values);
   }
 
-  if (allProvidedOptions.has('tls') || allProvidedOptions.has('ssl')) {
-    const tlsAndSslOpts = (allProvidedOptions.get('tls') || [])
+  if (allProvidedOptions.has('node:tls') || allProvidedOptions.has('ssl')) {
+    const tlsAndSslOpts = (allProvidedOptions.get('node:tls') || [])
       .concat(allProvidedOptions.get('ssl') || [])
       .map(getBoolean.bind(null, 'tls/ssl'));
     if (new Set(tlsAndSslOpts).size !== 1) {
@@ -475,7 +475,7 @@ export function parseOptions(
     }
 
     // SRV turns on TLS by default, but users can override and turn it off
-    const noUserSpecifiedTLS = !objectOptions.has('tls') && !urlOptions.has('tls');
+    const noUserSpecifiedTLS = !objectOptions.has('node:tls') && !urlOptions.has('node:tls');
     const noUserSpecifiedSSL = !objectOptions.has('ssl') && !urlOptions.has('ssl');
     if (noUserSpecifiedTLS && noUserSpecifiedSSL) {
       mongoOptions.tls = true;
@@ -1105,7 +1105,7 @@ export const OPTIONS = {
     default: 'mongodb'
   },
   ssl: {
-    target: 'tls',
+    target: 'node:tls',
     type: 'boolean'
   },
   timeoutMS: {

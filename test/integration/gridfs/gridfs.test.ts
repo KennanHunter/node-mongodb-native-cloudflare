@@ -66,7 +66,7 @@ describe('GridFS', () => {
     it('ensures chunks and files collection have required indexes when namespace does not exist', async () => {
       // Ensure the namespace does not exist; beforeEach should drop the Db, keeping this true
       expect(
-        (await db.collections()).filter(({ namespace }) => namespace.startsWith('fs'))
+        (await db.collections()).filter(({ namespace }) => namespace.startsWith('node:fs'))
       ).to.have.lengthOf(0);
 
       const upload = bucket.openUploadStream('test.txt');

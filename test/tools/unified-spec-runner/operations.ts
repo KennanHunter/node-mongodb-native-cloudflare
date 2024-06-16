@@ -213,7 +213,7 @@ operations.set('close', async ({ entities, operation }) => {
   } catch {}
 
   try {
-    const changeStream = entities.getEntity('stream', operation.object);
+    const changeStream = entities.getEntity('node:stream', operation.object);
     await changeStream.close();
     return;
   } catch {}

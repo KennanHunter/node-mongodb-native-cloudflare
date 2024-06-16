@@ -1,8 +1,8 @@
 import { expect } from 'chai';
-import * as os from 'os';
-import * as process from 'process';
+import * as os from 'node:os';
+import * as process from 'node:process';
 import * as sinon from 'sinon';
-import { inspect } from 'util';
+import { inspect } from 'node:util';
 
 import { version as NODE_DRIVER_VERSION } from '../../../../package.json';
 import {
@@ -603,7 +603,7 @@ describe('client metadata module', () => {
 
         it('omits os information', () => {
           const metadata = makeClientMetadata({ driverInfo: {} });
-          expect(metadata).to.not.have.property('os');
+          expect(metadata).to.not.have.property('node:os');
         });
       });
     });

@@ -1,8 +1,8 @@
 'use strict';
 
 const { Double } = require('bson');
-const stream = require('stream');
-const fs = require('fs');
+const stream = require('node:stream');
+const fs = require('node:fs');
 const { expect } = require('chai');
 const { promisify } = require('node:util');
 const { once } = require('node:events');
@@ -526,7 +526,7 @@ describe('GridFS Stream', function () {
     const client = configuration.newClient(configuration.writeConcernMax(), { maxPoolSize: 1 });
     client.connect(function (err, client) {
       const db = client.db(configuration.db);
-      const bucket = new GridFSBucket(db, { bucketName: 'fs' });
+      const bucket = new GridFSBucket(db, { bucketName: 'node:fs' });
 
       // We're only making sure this doesn't throw
       bucket.find({
@@ -696,7 +696,7 @@ describe('GridFS Stream', function () {
       const client = configuration.newClient(configuration.writeConcernMax(), { maxPoolSize: 1 });
       client.connect(function (err, client) {
         const db = client.db(configuration.db);
-        const bucket = new GridFSBucket(db, { bucketName: 'fs' });
+        const bucket = new GridFSBucket(db, { bucketName: 'node:fs' });
 
         db.collection('fs.files').insertMany([{ length: 0 }], function (error, result) {
           expect(error).to.not.exist;

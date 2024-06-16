@@ -1,6 +1,6 @@
 'use strict';
 const { assert: test, ignoreNsNotFound, setupDatabase } = require('../shared');
-const { format: f } = require('util');
+const { format: f } = require('node:util');
 const { expect } = require('chai');
 
 const Script = require('vm');

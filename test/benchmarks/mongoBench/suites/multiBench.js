@@ -1,4 +1,4 @@
-const { Readable } = require('stream');
+const { Readable } = require('node:stream');
 const { pipeline } = require('stream/promises');
 const {
   loadSpecFile,

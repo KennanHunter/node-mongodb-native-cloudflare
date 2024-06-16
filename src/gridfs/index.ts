@@ -24,7 +24,7 @@ const DEFAULT_GRIDFS_BUCKET_OPTIONS: {
   bucketName: string;
   chunkSizeBytes: number;
 } = {
-  bucketName: 'fs',
+  bucketName: 'node:fs',
   chunkSizeBytes: 255 * 1024
 };
 

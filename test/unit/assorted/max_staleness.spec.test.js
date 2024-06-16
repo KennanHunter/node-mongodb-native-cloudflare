@@ -1,6 +1,6 @@
 'use strict';
 const path = require('path');
-const fs = require('fs');
+const fs = require('node:fs');
 const { executeServerSelectionTest } = require('./server_selection_spec_helper');
 const { Server } = require('../../mongodb');
 

@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { env } from 'process';
+import { env } from 'node:process';
 
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import { ClientEncryption } from '../../../src/client-side-encryption/client_encryption';

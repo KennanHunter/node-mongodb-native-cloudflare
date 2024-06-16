@@ -1,6 +1,6 @@
 'use strict';
 
-const { get } = require('http');
+const { get } = require('node:http');
 
 async function isMockServerSetup() {
   const url = (() => {

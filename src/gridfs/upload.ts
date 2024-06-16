@@ -1,4 +1,4 @@
-import { Writable } from 'stream';
+import { Writable } from 'node:stream';
 
 import type { Document } from '../bson';
 import { ObjectId } from '../bson';

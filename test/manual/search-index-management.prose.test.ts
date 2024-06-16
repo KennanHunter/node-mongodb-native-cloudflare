@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { lt } from 'semver';
-import { Readable } from 'stream';
-import { clearTimeout, setTimeout as setTimeoutCb } from 'timers';
+import { Readable } from 'node:stream';
+import { clearTimeout, setTimeout as setTimeoutCb } from 'node:timers';
 import { setInterval } from 'timers/promises';
 
 import {

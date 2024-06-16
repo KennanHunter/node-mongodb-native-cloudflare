@@ -2,7 +2,7 @@
 
 import { EJSON } from 'bson';
 import { expect } from 'chai';
-import * as fs from 'fs';
+import * as fs from 'node:fs';
 import * as path from 'path';
 
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports

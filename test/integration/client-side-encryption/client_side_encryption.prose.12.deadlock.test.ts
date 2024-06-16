@@ -1,6 +1,6 @@
 import * as BSON from 'bson';
 import { expect } from 'chai';
-import { readFileSync } from 'fs';
+import { readFileSync } from 'node:fs';
 import * as path from 'path';
 
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports

@@ -1,4 +1,4 @@
-import { Readable, Transform } from 'stream';
+import { Readable, Transform } from 'node:stream';
 
 import { type BSONSerializeOptions, type Document, Long, pluckBSONSerializeOptions } from '../bson';
 import { CursorResponse } from '../cmap/wire_protocol/responses';
