@@ -76,7 +76,7 @@ export async function compress(
       }
       return await zstd.compress(dataToBeCompressed, ZSTD_COMPRESSION_LEVEL);
     }
-    case 'node:zlib': {
+    case 'zlib': {
       if (options.zlibCompressionLevel) {
         zlibOptions.level = options.zlibCompressionLevel;
       }
