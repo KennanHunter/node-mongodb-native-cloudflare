@@ -1,5 +1,5 @@
 import type { BSONType, ObjectIdLike } from 'bson';
-import { EventEmitter } from 'events';
+import { EventEmitter } from 'node:events';
 
 import type {
   Binary,

@@ -1,5 +1,5 @@
 import { type Document } from 'bson';
-import { setTimeout } from 'timers/promises';
+import { setTimeout } from 'node:timers/promises';
 
 import { MongoMissingCredentialsError } from '../../../error';
 import { ns } from '../../../utils';
